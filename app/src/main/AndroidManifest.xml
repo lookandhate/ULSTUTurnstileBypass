@@ -8,6 +8,9 @@
     <uses-feature
         android:name="android.hardware.nfc"
         android:required="true" />
+    <uses-feature
+        android:name="android.hardware.nfc.hce"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -19,7 +22,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ULSTUTurnstileBypass"
         tools:targetApi="31">
-
+        <activity
+            android:name=".activities.NFCEmulateActivity"
+            android:exported="false"
+            android:label="@string/title_activity_nfcemulate"
+            android:theme="@style/Theme.ULSTUTurnstileBypass" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -27,16 +34,16 @@
             android:theme="@style/Theme.ULSTUTurnstileBypass">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.NFCReadActivity"
             android:exported="true"
-            android:launchMode="singleTop"
             android:label="@string/title_activity_nfcread"
+            android:launchMode="singleTop"
             android:theme="@style/Theme.ULSTUTurnstileBypass">
             <intent-filter>
                 <action android:name="android.nfc.action.TECH_DISCOVERED" />
@@ -46,6 +53,19 @@
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/tech_list" />
         </activity>
+
+        <service
+            android:name=".utils.EmulatorService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/apduservice" />
+
+        </service>
     </application>
 
 </manifest>
