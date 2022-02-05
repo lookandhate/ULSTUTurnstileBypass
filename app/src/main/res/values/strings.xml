@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ULSTU Turnstile Bypass</string>
     <string name="title_activity_nfcread">NFCReadActivity</string>
+    <string name="title_activity_nfcemulate">NFCEmulate</string>
 </resources>
