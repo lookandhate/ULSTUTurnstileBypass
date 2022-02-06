@@ -4,6 +4,8 @@ package com.lookandhate.ulstuturnstilebypass.utils
 object AppMain {
     var cardData: CardInformation =
         CardInformation(mutableListOf<String>(), mutableListOf<ByteArray>())
+
+    val savedCardFileName: String = "card.dmp"
 }
 
 fun String.decodeHex(): ByteArray {
@@ -22,3 +24,4 @@ fun MutableList<ByteArray>.sum(): ByteArray {
     this.forEach { newArr += it }
     return newArr
 }
+

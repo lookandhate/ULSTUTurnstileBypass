@@ -2,4 +2,7 @@
     <string name="app_name">ULSTU Turnstile Bypass</string>
     <string name="title_activity_nfcread">NFCReadActivity</string>
     <string name="title_activity_nfcemulate">NFCEmulate</string>
+    <string name="servicedesc">ReplaceME</string>
+    <string name="aiddescription">ReplaceME</string>
+    <string name="nfcread_toast_no_card_info">There is no information about ULSTU card</string>
 </resources>

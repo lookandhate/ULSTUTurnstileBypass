@@ -1,17 +1,11 @@
 package com.lookandhate.ulstuturnstilebypass
 
 import android.content.Intent
-import android.nfc.NdefMessage
-import android.nfc.NfcAdapter
-import android.nfc.Tag
-import android.nfc.tech.MifareClassic
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
