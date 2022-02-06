@@ -10,7 +10,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -48,9 +48,14 @@ fun Greeting(name: String) {
 @Composable
 fun MainScreen() {
     val localContext = LocalContext.current
+    var cardDataLength by remember {
+        mutableStateOf(
+            AppMain.cardData.byteData.sum().size
+        )
+    }
     Column() {
         Text(text = "Card info", modifier = Modifier.align(Alignment.CenterHorizontally))
-        Text(text = "Card byte array Length ${AppMain.cardData.byteData.sum().size}")
+        Text(text = "Card byte array Length $cardDataLength")
         Button(onClick = {
             val intentToLaucnhCardReadActivity = Intent(localContext, NFCReadActivity::class.java)
             localContext.startActivity(intentToLaucnhCardReadActivity)
